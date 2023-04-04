@@ -152,18 +152,18 @@ public class BookRoomStepDefs {
 
             Actions actions = new Actions(get());
 
-//          Even if source point 11 is taken, it starts from the next day while booking
+//      Even if source point 16 is received,the reservation starts from the next 2nd day.like 18-19
             WebElement source =get()
-                    .findElement(By.xpath("//*[@class='rbc-date-cell']/button[text()='11']"));
+                    .findElement(By.xpath("//*[@class='rbc-date-cell']/button[text()='16']"));
 
             WebElement target = get()
-                    .findElement(By.xpath("//*[@class='rbc-date-cell']/button[text()='13']"));
+                    .findElement(By.xpath("//*[@class='rbc-date-cell']/button[text()='19']"));
 
             System.out.println("target.getLocation() = " + target.getLocation());
 
             System.out.println("source.getLocation() = " + source.getLocation());
 
-            actions.clickAndHold(source).pause(2000).moveByOffset(150,0).release(target).build().perform();
+            actions.clickAndHold(source).pause(2000).moveByOffset(180,0).release(target).build().perform();
         }
 
         waitFor(5);
